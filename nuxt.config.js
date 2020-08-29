@@ -38,7 +38,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    '~/plugins/buttons.js'
+    '~/plugins/buttons.js',
+    { src: '~/plugins/notification.js', ssr: false }
   ],
   /*
   ** Auto import components

@@ -18,6 +18,7 @@
           :to="item.to"
           router
           exact
+          color="#9C27B0"
         >
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
@@ -40,8 +41,10 @@
             v-for="(admin, i) in admins"
             :key="i"
             link
+            :to="admin[2]"
+            router
           >
-            <v-list-item-action class="ml-5">
+            <v-list-item-action>
               <v-icon>{{ admin[1] }}</v-icon>
             </v-list-item-action>
             <v-list-item-content>
@@ -152,9 +155,9 @@ export default {
       drawer: false,
       fixed: false,
       admins: [
-        ['Users', 'mdi-checkbox-blank-circle'],
-        ['Roles', 'mdi-checkbox-blank-circle'],
-        ['Role Prvilate', 'mdi-checkbox-blank-circle']
+        ['Users', 'mdi-checkbox-blank-circle', '/ums/user'],
+        ['Roles', 'mdi-checkbox-blank-circle', '/ums/role']
+        // ['Role Prvilate', 'mdi-checkbox-blank-circle', '/ums/user']
       ],
 
       items: [

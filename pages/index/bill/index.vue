@@ -6,6 +6,9 @@
           Bill
         </b>
         {{ nowDate }}
+        <v-btn @click="noti">
+          noti
+        </v-btn>
         <b-icon-add :right="true" :click="goForm" />
       </v-col>
     </v-row>
@@ -25,10 +28,9 @@
     <hr>
     <v-row>
       <v-col>
-        <h3 class="float-left">
+        <h3>
           Payed
         </h3>
-        <b-icon-add :right="true" :click="goForm" />
       </v-col>
     </v-row>
     <v-row>
@@ -48,6 +50,7 @@
 </template>
 <script>
 import BillCard from '@/components/Bill/BillCard'
+import MessageConstants from '@/common/MessageConstants'
 export default {
   components: {
     BillCard
@@ -79,7 +82,15 @@ export default {
       ]
     }
   },
+  mounted () {
+    this.noti()
+  },
   methods: {
+    noti () {
+      this.$toast.error(MessageConstants.FAIL)
+
+      this.$toast.success(MessageConstants.SUCCESS)
+    },
     onPay (index) {
       // console.log('Pay index: ', index)
     },

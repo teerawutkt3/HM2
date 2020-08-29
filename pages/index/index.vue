@@ -3,6 +3,7 @@
     column
   >
     <v-flex>
+      <notifications group="foo" />
       <nuxt-child />
     </v-flex>
   </v-layout>
