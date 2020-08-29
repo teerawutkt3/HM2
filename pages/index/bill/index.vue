@@ -2,8 +2,31 @@
   <div>
     <v-row>
       <v-col>
-        <h3 class="float-left">
+        <b class="float-left">
           Bill
+        </b>
+        {{ nowDate }}
+        <b-icon-add :right="true" :click="goForm" />
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col
+        v-for="(bill, index) in billList"
+        :key="index"
+        cols="12"
+        sm="6"
+        md="4"
+        lg="3"
+        xl="3"
+      >
+        <BillCard :title="bill.title" :type="bill.type" :cost="bill.cost" :click="()=>{onPay(index)}" />
+      </v-col>
+    </v-row>
+    <hr>
+    <v-row>
+      <v-col>
+        <h3 class="float-left">
+          Payed
         </h3>
         <b-icon-add :right="true" :click="goForm" />
       </v-col>
@@ -31,6 +54,7 @@ export default {
   },
   data () {
     return {
+      nowDate: new Date(),
       billList: [
         {
           title: 'ค่าไฟ',
@@ -57,7 +81,7 @@ export default {
   },
   methods: {
     onPay (index) {
-      console.log('Pay index: ', index)
+      // console.log('Pay index: ', index)
     },
     goForm () {
       this.$router.push({ path: '/bill/b-form' })

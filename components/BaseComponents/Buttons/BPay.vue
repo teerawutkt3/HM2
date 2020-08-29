@@ -1,8 +1,6 @@
 <template>
-  <v-btn class="css-icon-add" :class="{'float-right': right}" small fab @click="click">
-    <v-icon dark>
-      mdi-plus
-    </v-icon>
+  <v-btn class="css-pay" :class="{'float-right': right}" small @click="click">
+    Pay
   </v-btn>
 </template>
 <script>
@@ -15,12 +13,16 @@ export default {
     click: {
       type: Function,
       default: () => {}
+    },
+    small: {
+      type: String,
+      default: 'small'
     }
   }
 }
 </script>
 <style>
-.css-icon-add {
+.css-pay {
   color: #ffffff !important;
   background:linear-gradient(to right, #9C27B0, #E040FB);
 }

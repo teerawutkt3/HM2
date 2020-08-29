@@ -1,5 +1,5 @@
 <template>
-  <v-btn :color="color" :class="{'float-right': right}" x-small fab @click="click">
+  <v-btn class="css-icon-delete" :class="{'float-right': right}" x-small fab @click="click">
     <v-icon dark>
       mdi-delete
     </v-icon>
@@ -8,10 +8,6 @@
 <script>
 export default {
   props: {
-    color: {
-      type: String,
-      default: 'error'
-    },
     right: {
       type: Boolean,
       default: false
@@ -23,3 +19,10 @@ export default {
   }
 }
 </script>
+<style>
+.css-icon-delete {
+  color: #ffffff !important;
+  /* background:linear-gradient(to right, #ca0909, #d46767); */
+  background:linear-gradient(to right, #9C27B0, #E040FB);
+}
+</style>

@@ -5,32 +5,36 @@
         <template v-slot:default>
           <thead>
             <tr>
+              <th>
+                Bill
+              </th>
               <th>ลำดับ</th>
               <th>Title</th>
               <th>Type</th>
               <th>Cost</th>
-              <th />
             </tr>
           </thead>
           <tbody>
             <tr>
               <td />
-              <td> <v-text-field label="Title" color="#b58a5d" :rules="rules" /></td>
-              <td> <v-text-field label="Type" color="#b58a5d" :rules="rules" /></td>
-              <td> <v-text-field label="Cost" color="#b58a5d" :rules="rules" /></td>
+              <td>
+                <v-text-field label="Title" color="#E040FB" :rules="rules" />
+              </td>
+              <td> <v-text-field label="Type" color="#E040FB" :rules="rules" /></td>
+              <td> <v-text-field label="Cost" color="#E040FB" :rules="rules" /></td>
               <td class="text-right">
                 <b-icon-add />
               </td>
             </tr>
             <tr v-for="(item,index) in billList" :key="index">
+              <td>
+                <b-icon-edit />
+                <b-icon-delete />
+              </td>
               <td>{{ index+1 }}</td>
               <td>{{ item.title }}</td>
               <td>{{ item.type }}</td>
               <td>{{ item.cost }}</td>
-              <td class="text-right">
-                <b-icon-edit />
-                <b-icon-delete />
-              </td>
             </tr>
           </tbody>
         </template>
@@ -51,13 +55,12 @@
           v-model="table.page"
           circle
           class="float-right"
-          color="#b58a5d"
+          color="#E040FB"
           :length="15"
           :total-visible="7"
         />
       </v-col>
     </v-row>
-  </div>
   </div>
 </template>
 

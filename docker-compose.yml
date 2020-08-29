@@ -1,0 +1,23 @@
+
+version: "3"
+
+services:
+  nuxt:
+    build: ./
+    image: hm2-image
+    container_name: hm2-app
+    restart: always
+    ports:
+      - "4000:3000"
+    command:
+      "npm run start"
+
+  # nginx:
+  #   image: nginx:1.17
+  #   container_name: ngx
+  #   ports:
+  #     - "80:80"
+  #   volumes:
+  #     - ./nginx:/etc/nginx
+  #   depends_on:
+  #     - nuxt

@@ -1,15 +1,11 @@
 <template>
-  <v-btn :color="color" :class="{'float-right': right}" small>
+  <v-btn class="css-save" :class="{'float-right': right}" small>
     เพิ่มข้อมูล
   </v-btn>
 </template>
 <script>
 export default {
   props: {
-    color: {
-      type: String,
-      default: 'teal'
-    },
     right: {
       type: Boolean,
       default: false
@@ -25,3 +21,9 @@ export default {
   }
 }
 </script>
+<style>
+.css-save {
+  color: #ffffff !important;
+  background:linear-gradient(to right, #9C27B0, #E040FB);
+}
+</style>

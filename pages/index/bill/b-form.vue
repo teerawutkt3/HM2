@@ -1,8 +1,5 @@
 <template>
   <div>
-    <h3>
-      Bill
-    </h3>
     <v-row>
       <v-col>
         <BillTable />

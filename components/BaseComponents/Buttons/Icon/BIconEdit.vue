@@ -1,5 +1,5 @@
 <template>
-  <v-btn :color="color" :class="{'float-right': right}" x-small fab @click="click">
+  <v-btn class="css-icon-edit" :class="{'float-right': right}" x-small fab @click="click">
     <v-icon dark>
       mdi-pencil
     </v-icon>
@@ -8,10 +8,6 @@
 <script>
 export default {
   props: {
-    color: {
-      type: String,
-      default: '#b58a5d'
-    },
     right: {
       type: Boolean,
       default: false
@@ -23,3 +19,10 @@ export default {
   }
 }
 </script>
+<style>
+.css-icon-edit {
+  color: #ffffff !important;
+  /* background:linear-gradient(to right, #fb882c, #deb83c); */
+  background:linear-gradient(to right, #9C27B0, #E040FB);
+}
+</style>

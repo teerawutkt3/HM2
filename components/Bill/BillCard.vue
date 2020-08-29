@@ -1,12 +1,10 @@
 <template>
-  <v-card color="#385F73">
+  <v-card color="#e5dce7">
     <v-card-text>
       <div>{{ title }}</div>
       <h2>{{ type }}</h2>
       <p>{{ cost }}</p>
-      <v-btn color="#b58a5d" small @click="click">
-        Pay
-      </v-btn>
+      <b-pay :click="click" />
     </v-card-text>
   </v-card>
 </template>
