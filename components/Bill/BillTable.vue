@@ -29,7 +29,7 @@
             <tr v-for="(item,index) in billList" :key="index">
               <td>
                 <b-icon-edit />
-                <b-icon-delete />
+                <b-icon-delete :click="()=>{doDelete(index)}" />
               </td>
               <td>{{ index+1 }}</td>
               <td>{{ item.title }}</td>
@@ -65,6 +65,10 @@
 </template>
 
 <script>
+import SwalUtils from '@/common/SwalUtils'
+import Swal from 'sweetalert2'
+import MessageConstants from '~/common/MessageConstants'
+
 export default {
   data () {
     return {
@@ -126,6 +130,18 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    doDelete (index) {
+      // console.log('index: ', index)
+      Swal.fire(SwalUtils.CONFIRM).then((rs) => {
+        if (rs.value) {
+          this.$toast.success(MessageConstants.SUCCESS)
+          Swal.fire(SwalUtils.ALERT)
+        }
+      })
+    }
+
   }
 }
 </script>
