@@ -15,6 +15,11 @@
     </form>
   </div>
 </template>
+<script>
+export default {
+  layout: 'empty'
+}
+</script>
 <style>
     body {
         background-color: #F3EBF6;
